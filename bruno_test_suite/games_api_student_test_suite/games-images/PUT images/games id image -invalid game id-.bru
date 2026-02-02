@@ -1,0 +1,21 @@
+meta {
+  name: games id image -invalid game id-
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{BASE_URL}}/games/999999/image
+  body: none
+  auth: none
+}
+
+headers {
+  X-Authorization: token
+}
+
+tests {
+  test("Status code is 404", function () {
+      expect(res.getStatus()).to.equal(404);
+  });
+}

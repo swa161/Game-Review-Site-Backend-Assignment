@@ -1,0 +1,21 @@
+meta {
+  name: game does not exist
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{BASE_URL}}/games/104546456/owned
+  body: none
+  auth: none
+}
+
+headers {
+  X-Authorization: token
+}
+
+tests {
+  test("Status code is 404", function () {
+      expect(res.getStatus()).to.equal(404);
+  });
+}

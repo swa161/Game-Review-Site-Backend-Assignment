@@ -1,0 +1,21 @@
+meta {
+  name: games id image -no game id-
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{BASE_URL}}/games/ /image
+  body: none
+  auth: none
+}
+
+headers {
+  X-Authorization: token
+}
+
+tests {
+  test("Status code is 400", function () {
+      expect(res.getStatus()).to.equal(400);
+  });
+}

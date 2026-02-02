@@ -1,0 +1,21 @@
+meta {
+  name: games id owned
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:4941/api/v1/games/11/owned
+  body: none
+  auth: none
+}
+
+headers {
+  X-Authorization: token
+}
+
+tests {
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}
